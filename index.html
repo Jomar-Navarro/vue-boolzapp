@@ -58,15 +58,19 @@
             <div class="search ">
               <div class="d-flex align-center">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input
+                  v-model.trim="chatToSearch"
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat">
               </div>
             </div>
+            
             <!-- /cerca o inizia -->
           </div>
 
             <div class="convo">
 
-              <div @click="selectChat(index)" v-for="(contact, index) in contacts" class="chat avatars d-flex align-center">
+              <div @click="selectChat(index)" v-for="(contact, index) in filterChat" class="chat avatars d-flex align-center">
                 <div class="avatar align-center">
                   <img :src="contact.avatar" alt="avatar_2">
                 </div>

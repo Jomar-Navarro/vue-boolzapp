@@ -171,15 +171,23 @@ createApp({
         }
       ],
 
+      // Contatore
       counter: 0,
+
+      // Reset input chat
       newMessage: '',
+      chatToSearch: '',
+      searchChat: false,  
     }
     
     
   },
   
-  computed:{
-
+  computed: {
+    filterChat(){
+      return this.contacts.filter(contact => 
+        contact.name.toLowerCase().startsWith(this.chatToSearch.toLowerCase()))
+    }
   },
   
   methods: {
@@ -208,16 +216,16 @@ createApp({
             status: 'received',
           })
         }, 1000);
-
         }
 
       // Mi resetta il testo che inserisco dentro l'input quando click il tasto invio
       this.newMessage = '';
-    }
+    },
+
   },
 
   mounted(){
-
+    console.log(this.contacts);
   },
 
 }).mount('#app')
