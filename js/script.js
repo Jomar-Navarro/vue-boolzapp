@@ -171,15 +171,23 @@ createApp({
         }
       ],
 
+      counter: 0,
       
     }
+    
+    
   },
+  
+  computed:{
 
+  },
+  
   methods: {
-
+    
   },
 
   mounted(){
+    console.log(this.counter);
 
   },
 

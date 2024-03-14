@@ -72,7 +72,7 @@
                 </div>
                 <div class="text">
                   <p>{{ contact.name }}</p>
-                  <p v-for="(text, index) in contact.messages">Ultimo messaggio</p>
+                  <p>{{ contact.messages[contact.messages.length - 1].message }}</p>
                 </div>
               </div>
 
@@ -103,11 +103,14 @@
           <!-- /user -->
         <div class="window-chat">
           <div class="chat">
-
-            <div class="sent d-flex">
-              <div class="you d-flex">
+            <div v-for="(message, index) in contacts[counter].messages">
+            
+              <div
+              class="sent d-flex"
+              :class="{'sent': message.status === 'sent', 'him-her': message.status === 'received'}">
+                <div class="you d-flex s-between" v-if="message.status === 'sent'">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, minima quisquam accusamus similique in amet optio quod beatae atque deserunt?
+                  {{ message.message }}
                 </p>
                 <p class="d-flex s-between align-center">
                   <span class="dropdown d-flex">
@@ -122,13 +125,13 @@
                   </span>
                   <span>16:13</span>
                 </p>
+                </div>
               </div>
-            </div>
 
-            <div class="him-her">
-              <div class="read d-flex">
+              <div class="him-her">
+                <div class="read d-flex s-between" v-if="message.status === 'received'">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolore provident tenetur natus doloribus dolorum voluptate asperiores modi aliquid. Nostrum!
+                  {{ message.message }}
                 </p>
                 <p class="d-flex s-between align-center">
                   <span class="dropdown d-flex">
@@ -143,9 +146,10 @@
                   </span>
                   <span>16:15</span>
                 </p>
+                </div>
               </div>
-            </div>        
-
+              
+            </div>
           </div>
         </div>
 
