@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <!-- /Font -->
+
+  <!-- FontAwesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css' integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ==' crossorigin='anonymous'/>
+  <!-- /FontAwesome -->
+
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- /Vue -->
+
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>vue-boolzapp</title>
+</head>
+<body>
+  
+  <main>
+    <div class="container">
+      <div class="row d-flex">
+        <!-- colonna sinistra -->
+        <div class="col">
+          <div>
+            <!-- user -->
+            <div class="user d-flex s-between align-center">
+              <div class="avatar">
+                <img src="assets/img/avatar_io.jpg" alt="avatar_io">
+              </div>
+
+              <div class="icons d-flex">
+                <div><i class="fa-solid fa-circle-notch"></i></div>
+                <div><i class="fa-solid fa-message"></i></div>
+                <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+              </div>
+            </div>
+            <!-- /user -->
+
+            <!-- notifiche -->
+            <div class="notifications d-flex align-center">
+              <div class="bell d-flex align-center justify-center">
+                <i class="fa-solid fa-bell-slash"></i>
+              </div>
+              <div class="text">
+                <p>Ricevi notifiche di nuovi messaggi</p>
+                <p>Attiva notifiche desktop</p>
+              </div>
+            </div>
+            <!-- /notifiche -->
+
+            <!-- cerca o inizia -->
+            <div class="search ">
+              <div class="d-flex align-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat">
+              </div>
+            </div>
+            <!-- /cerca o inizia -->
+          </div>
+
+            <div class="convo">
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_2.jpg" alt="avatar_2">
+                </div>
+                <div class="text">
+                  <p>Danica</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_3.jpg" alt="avatar_3">
+                </div>
+                <div class="text">
+                  <p>John Q.</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_4.jpg" alt="avatar_4">
+                </div>
+                <div class="text">
+                  <p>Jery</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_5.jpg" alt="avatar_5">
+                </div>
+                <div class="text">
+                  <p>Samu</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_6.jpg" alt="avatar_6">
+                </div>
+                <div class="text">
+                  <p>Raffa</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_7.jpg" alt="avatar_7">
+                </div>
+                <div class="text">
+                  <p>Shane</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_8.jpg" alt="avatar_8">
+                </div>
+                <div class="text">
+                  <p>Bridget</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_1.jpg" alt="avatar_1">
+                </div>
+                <div class="text">
+                  <p>Rommel</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div> 
+              </div>
+
+              <div class="chat d-flex align-center">
+                <div class="avatar align-center">
+                  <img src="assets/img/avatar_2.jpg" alt="avatar_2">
+                </div>
+                <div class="text">
+                  <p>MJ</p>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <!-- /colonna sinistra -->
+
+        <div class="col">
+          <!-- user -->
+          <div class="user d-flex s-between align-center">
+            <div class="avatar d-flex align-center">
+              <div>
+                <img src="assets/img/avatar_1.jpg" alt="avatar_1">
+              </div>
+
+              <div class="text-chat">
+                <p>Michele</p>
+                <p>Ultimo accesso oggi alle 16:26</p>
+              </div>
+            </div>
+
+            <div class="icons d-flex">
+              <div><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div><i class="fa-solid fa-paperclip"></i></div>
+              <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </div>
+          </div>
+          <!-- /user -->
+        <div class="window-chat">
+          <div class="chat">
+
+            <div class="sent d-flex">
+              <div class="you d-flex">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, minima quisquam accusamus similique in amet optio quod beatae atque deserunt?
+                </p>
+                <p class="d-flex s-between align-center">
+                  <span class="dropdown d-flex">
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <span class="dropdown-content d-flex">
+                      <a class="border" href="#">Reply</a>
+                      <a href="#">Copy</a>
+                      <a class="border" href="#">Forward</a>
+                      <a href="#">Star</a>
+                      <a href="#">Delete for me</a>
+                    </span>
+                  </span>
+                  <span>16:13</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="him-her">
+              <div class="read d-flex">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolore provident tenetur natus doloribus dolorum voluptate asperiores modi aliquid. Nostrum!
+                </p>
+                <p class="d-flex s-between align-center">
+                  <span class="dropdown d-flex">
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <span class="dropdown-content d-flex">
+                      <a class="border" href="#">Reply</a>
+                      <a href="#">Copy</a>
+                      <a class="border" href="#">Forward</a>
+                      <a href="#">Star</a>
+                      <a href="#">Delete for me</a>
+                    </span>
+                  </span>
+                  <span>16:15</span>
+                </p>
+              </div>
+            </div>        
+
+          </div>
+        </div>
+
+        <div class="board d-flex align-center s-between">
+            <div><i class="fa-regular fa-face-smile"></i></div>
+            <input type="text" placeholder="Scrivi un messaggio">
+            <div><i class="fa-solid fa-microphone"></i></div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
