@@ -123,7 +123,7 @@
                       <a href="#">Delete for me</a>
                     </span>
                   </span>
-                  <span>{{ message.date.slice(11, 16) }}</span>
+                  <span>{{ message.date }}</span>
                 </p>
                 </div>
               </div>
@@ -144,7 +144,7 @@
                       <a href="#">Delete for me</a>
                     </span>
                   </span>
-                  <span>{{ message.date.slice(11, 16) }}</span>
+                  <span>{{ message.date }}</span>
                 </p>
                 </div>
               </div>
@@ -155,7 +155,11 @@
 
         <div class="board d-flex align-center s-between">
             <div><i class="fa-regular fa-face-smile"></i></div>
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input
+              v-model.trim="newMessage"
+              @keyup.enter="addMessage"
+              type="text"
+              placeholder="Scrivi un messaggio">
             <div><i class="fa-solid fa-microphone"></i></div>
         </div>
 
