@@ -155,6 +155,11 @@ li{
   padding: 0 20px;
 }
 
+.chat:hover{
+  background-color: lightgray;
+  cursor: pointer;
+}
+
 .chat .text{
   padding: 0 30px;
 }
@@ -244,7 +249,7 @@ li{
 .board input{
   width: 80%;
   border: none;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 /************************ 

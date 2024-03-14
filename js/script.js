@@ -183,12 +183,13 @@ createApp({
   },
   
   methods: {
-    
+    selectChat(index){
+      this.counter = index;
+    }
   },
 
   mounted(){
     console.log(this.counter);
-
   },
 
 }).mount('#app')
