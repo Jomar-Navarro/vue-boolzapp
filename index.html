@@ -72,7 +72,7 @@
                 </div>
                 <div class="text">
                   <p>{{ contact.name }}</p>
-                  <p>Ultimo messaggio inviato</p>
+                  <p v-for="(text, index) in contact.messages">Ultimo messaggio</p>
                 </div>
               </div>
 
