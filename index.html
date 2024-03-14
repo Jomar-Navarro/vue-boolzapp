@@ -22,7 +22,7 @@
 </head>
 <body>
   
-  <main>
+  <main id="app">
     <div class="container">
       <div class="row d-flex">
         <!-- colonna sinistra -->
@@ -65,95 +65,17 @@
           </div>
 
             <div class="convo">
-              <div class="chat d-flex align-center">
+
+              <div v-for="(contact, index) in contacts" class="chat d-flex align-center">
                 <div class="avatar align-center">
-                  <img src="assets/img/avatar_2.jpg" alt="avatar_2">
+                  <img :src="contact.avatar" alt="avatar_2">
                 </div>
                 <div class="text">
-                  <p>Danica</p>
+                  <p>{{ contact.name }}</p>
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
 
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_3.jpg" alt="avatar_3">
-                </div>
-                <div class="text">
-                  <p>John Q.</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_4.jpg" alt="avatar_4">
-                </div>
-                <div class="text">
-                  <p>Jery</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_5.jpg" alt="avatar_5">
-                </div>
-                <div class="text">
-                  <p>Samu</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_6.jpg" alt="avatar_6">
-                </div>
-                <div class="text">
-                  <p>Raffa</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_7.jpg" alt="avatar_7">
-                </div>
-                <div class="text">
-                  <p>Shane</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_8.jpg" alt="avatar_8">
-                </div>
-                <div class="text">
-                  <p>Bridget</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_1.jpg" alt="avatar_1">
-                </div>
-                <div class="text">
-                  <p>Rommel</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div> 
-              </div>
-
-              <div class="chat d-flex align-center">
-                <div class="avatar align-center">
-                  <img src="assets/img/avatar_2.jpg" alt="avatar_2">
-                </div>
-                <div class="text">
-                  <p>MJ</p>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
           </div>
         </div>
         <!-- /colonna sinistra -->
