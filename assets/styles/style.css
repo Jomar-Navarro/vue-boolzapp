@@ -214,6 +214,7 @@ li{
 
 .you i, .read i{
   color: var(--grigetto);
+  padding-left: 20px;
 }
 
 .you p:nth-child(2), .read p:nth-child(2){
