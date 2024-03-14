@@ -155,7 +155,7 @@ li{
   padding: 0 20px;
 }
 
-.chat:hover{
+.chat.avatars:hover {
   background-color: lightgray;
   cursor: pointer;
 }
