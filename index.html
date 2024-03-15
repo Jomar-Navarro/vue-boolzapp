@@ -13,6 +13,10 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css' integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ==' crossorigin='anonymous'/>
   <!-- /FontAwesome -->
 
+  <!-- Luxon -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+  <!-- /Luxon -->
+  
   <!-- Vue -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <!-- /Vue -->
@@ -70,7 +74,12 @@
 
             <div class="convo">
 
-              <div @click="selectChat(index)" v-for="(contact, index) in filterChat" class="chat avatars d-flex align-center">
+            <div
+                @click="selectChat(index)"
+                v-for="(contact, index) in filterChat"
+                class="chat avatars d-flex align-center"
+                
+                >
                 <div class="avatar align-center">
                   <img :src="contact.avatar" alt="avatar_2">
                 </div>
@@ -89,11 +98,11 @@
           <div class="user d-flex s-between align-center">
             <div class="avatar d-flex align-center">
               <div>
-                <img src="assets/img/avatar_1.jpg" alt="avatar_1">
+                <img :src="activeContact.avatar" alt="avatar_1">
               </div>
 
               <div class="text-chat">
-                <p>Michele</p>
+                <p>{{ activeContact.name }}</p>
                 <p>Ultimo accesso oggi alle 16:26</p>
               </div>
             </div>
@@ -107,11 +116,12 @@
           <!-- /user -->
         <div class="window-chat">
           <div class="chat">
-            <div v-for="(message, index) in contacts[counter].messages">
+            <div v-for="(message, index) in activeContact.messages">
             
               <div
               class="sent d-flex"
-              :class="{'sent': message.status === 'sent', 'him-her': message.status === 'received'}">
+              :class="{'sent': message.status === 'sent', 'him-her': message.status === 'received'}"
+              >
                 <div class="you d-flex s-between" v-if="message.status === 'sent'">
                 <p>
                   {{ message.message }}

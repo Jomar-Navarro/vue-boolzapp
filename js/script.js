@@ -1,6 +1,6 @@
 console.log('vue-boolzapp');
 
-
+const { Datatime } = Luxon;
 const { createApp } = Vue;
 
 createApp({
@@ -178,6 +178,8 @@ data(){
         newMessage: '',
         chatToSearch: '',
         searchChat: false,  
+
+        activeContact: null
     }
     
     
@@ -186,14 +188,23 @@ data(){
     computed: {
     filterChat(){
     return this.contacts.filter(contact => 
-        contact.name.toLowerCase().includes(this.chatToSearch.toLowerCase()))
+        contact.name.toLowerCase().startsWith(this.chatToSearch.toLowerCase()))
+    },
+
+    visibleContact(){
+        return contacts.filter(contact => contact.visible)
     }
+    },
+
+    created(){
+        this.activeContact = this.contacts[0];
+        console.log(this.activeContact);
     },
 
     methods: {
     // Questa funzione quando clicko all'interno delle chat degli utenti mi prende il suo rispettivo indice. Che di conseguenza mi porta alla sua rispettiva conversazione
     selectChat(index){
-    this.counter = index;
+    this.activeContact = this.contacts[index];
     },
 
     // Questo funzione mi aggiunge il messaggio in base a cosa scrivo nell'input
