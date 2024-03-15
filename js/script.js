@@ -189,9 +189,16 @@ data(){
 
     computed: {
     filterChat(){
-    return this.contacts.filter(contact => 
-        contact.name.toLowerCase().includes(this.chatToSearch.toLowerCase()))
-    },
+    this.contacts.forEach(contact => {
+        if (contact.name.toLowerCase().includes(this.chatToSearch.toLowerCase())) {
+            contact.visible = true
+        }else{
+            contact.visible = false
+        }
+
+    });
+    return this.contacts;
+},
 
     visibleContact(){
         return contacts.filter(contact => contact.visible)
@@ -237,7 +244,7 @@ data(){
 },
 
     mounted(){
-    this.dataOra = DataTime.now().setLocale('it').toLocaleString(DataTime.DATETIME_SHORT)
+    
     },
 
 }).mount('#app')

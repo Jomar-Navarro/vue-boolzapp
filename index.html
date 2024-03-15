@@ -75,6 +75,7 @@
             <div class="convo">
 
             <div
+                v-show="contact.visible"
                 @click="selectChat(index)"
                 v-for="(contact, index) in filterChat"
                 class="chat avatars d-flex align-center"
@@ -103,7 +104,7 @@
 
               <div class="text-chat">
                 <p>{{ activeContact.name }}</p>
-                <p>Ultimo accesso oggi alle {{ dataOra }}</p>
+                <p>Ultimo accesso oggi alle {{  }}</p>
               </div>
             </div>
 
