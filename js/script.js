@@ -1,7 +1,8 @@
 console.log('vue-boolzapp');
 
-const { Datatime } = Luxon;
+const { DataTime } = luxon;
 const { createApp } = Vue;
+
 
 createApp({
 
@@ -179,7 +180,8 @@ data(){
         chatToSearch: '',
         searchChat: false,  
 
-        activeContact: null
+        activeContact: null,
+        dataOra: '',
     }
     
     
@@ -232,11 +234,10 @@ data(){
     // Mi resetta il testo che inserisco dentro l'input quando click il tasto invio
     this.newMessage = '';
     },
-
 },
 
     mounted(){
-    console.log(this.contacts);
+    this.dataOra = DataTime.now().setLocale('it').toLocaleString(DataTime.DATETIME_SHORT)
     },
 
 }).mount('#app')
