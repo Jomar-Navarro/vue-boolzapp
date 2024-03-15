@@ -190,7 +190,7 @@ data(){
     computed: {
     filterChat(){
     return this.contacts.filter(contact => 
-        contact.name.toLowerCase().startsWith(this.chatToSearch.toLowerCase()))
+        contact.name.toLowerCase().includes(this.chatToSearch.toLowerCase()))
     },
 
     visibleContact(){
