@@ -5,9 +5,9 @@ const { createApp } = Vue;
 
 createApp({
 
-  data(){
+data(){
     return {
-      contacts: [
+    contacts: [
         {
             name: 'Michele',
             avatar: 'assets/img/avatar_1.jpg',
@@ -169,63 +169,63 @@ createApp({
                 }
             ],
         }
-      ],
+        ],
 
       // Contatore
-      counter: 0,
+        counter: 0,
 
       // Reset input chat
-      newMessage: '',
-      chatToSearch: '',
-      searchChat: false,  
+        newMessage: '',
+        chatToSearch: '',
+        searchChat: false,  
     }
     
     
-  },
-  
-  computed: {
+    },
+
+    computed: {
     filterChat(){
-      return this.contacts.filter(contact => 
-        contact.name.toLowerCase().startsWith(this.chatToSearch.toLowerCase()))
+    return this.contacts.filter(contact => 
+        contact.name.toLowerCase().includes(this.chatToSearch.toLowerCase()))
     }
-  },
-  
-  methods: {
+    },
+
+    methods: {
     // Questa funzione quando clicko all'interno delle chat degli utenti mi prende il suo rispettivo indice. Che di conseguenza mi porta alla sua rispettiva conversazione
     selectChat(index){
-      this.counter = index;
+    this.counter = index;
     },
 
     // Questo funzione mi aggiunge il messaggio in base a cosa scrivo nell'input
     addMessage(){
-      if (this.newMessage !== '') {
+        if (this.newMessage !== '') {
         // Creo una costante dandogli il nome 'activeUser' per prendere l'oggetto dell'array in base al suo indice
         const activeUser = this.contacts[this.counter]
         // Riprendo la costante per pushare nell'array dell'oggetto messages un nuovo oggetto "data, message, status"
         activeUser.messages.push({
-          date: '14/03/2024 00:00:00',
-          message: this.newMessage,
-          status: 'sent',
+        date: '14/03/2024 00:00:00',
+        message: this.newMessage,
+        status: 'sent',
         });
 
         // Questo codice ha la stessa logica precedente ma con un timer. Sempre nell'array nell'oggetto "messages" pusho un nuovo oggetto ma con lo status 'received'
         setTimeout(() => {
-          activeUser.messages.push({
+        activeUser.messages.push({
             date: '14/03/2024 00:00:00',
             message: 'Ok!',
             status: 'received',
-          })
+        })
         }, 1000);
         }
 
-      // Mi resetta il testo che inserisco dentro l'input quando click il tasto invio
-      this.newMessage = '';
+    // Mi resetta il testo che inserisco dentro l'input quando click il tasto invio
+    this.newMessage = '';
     },
 
-  },
+},
 
-  mounted(){
+    mounted(){
     console.log(this.contacts);
-  },
+    },
 
 }).mount('#app')
