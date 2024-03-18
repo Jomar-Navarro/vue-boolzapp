@@ -182,6 +182,7 @@ data(){
 
         activeContact: null,
         dataOra: '',
+        onlyOra: '',
     }
     
     
@@ -246,6 +247,7 @@ data(){
     mounted(){
         this.dataOra = DateTime.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss')
 
+        this.onlyOra = DateTime.now().setLocale('it').toFormat('hh:mm:ss')
     }
     
 }).mount('#app')
