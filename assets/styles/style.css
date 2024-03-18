@@ -62,6 +62,10 @@ li{
   border-top: 1px solid lightgrey;
 }
 
+.d-none{
+  display: none;
+}
+
 /************************ 
         /UTILITIES
  **********************/
