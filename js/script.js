@@ -1,6 +1,6 @@
 console.log('vue-boolzapp');
 
-const { DataTime } = luxon;
+const { DateTime } = luxon;
 const { createApp } = Vue;
 
 
@@ -244,7 +244,8 @@ data(){
 },
 
     mounted(){
-    
-    },
+        this.dataOra = DateTime.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss')
 
+    }
+    
 }).mount('#app')
